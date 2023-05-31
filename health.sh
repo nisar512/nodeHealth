@@ -9,9 +9,13 @@
 ##############################################
 
 set -x # debug mode
+set -e # exits when there is error
+set -o pipefail 
 
 df -h
 
 free -g
 
 nproc
+
+ps -ef | grep python | awk -F" " '{print $2}'
